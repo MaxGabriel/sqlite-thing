@@ -1,9 +1,10 @@
 CREATE TABLE users(
 	username       TEXT PRIMARY KEY NOT NULL,
 	email          TEXT    NOT NULL,
+	password       TEXT    NULLABLE,
 	age            INT     NULLABLE,
 	admin          BOOL    NULLABLE,
-	favorite_color TEXT    NULLABLE,
+	country        TEXT    NULLABLE,
 );
 CREATE UNIQUE INDEX email_index on users (email);
 
