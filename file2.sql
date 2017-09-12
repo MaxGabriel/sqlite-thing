@@ -3,7 +3,7 @@ CREATE TABLE users(
 	email          TEXT    NOT NULL,
 	password       TEXT    NULLABLE,
 	age            INT     NULLABLE,
-	admin          BOOL    NULLABLE,
+	admin          BOOLEAN NULLABLE,
 	country        TEXT    NULLABLE,
 );
 CREATE UNIQUE INDEX email_index on users (email);
@@ -23,5 +23,5 @@ CREATE INDEX user_1_user_2 on follows (user_1_name, user_2_name);
 
 CREATE TABLE preferences(
 	username TEXT PRIMARY KEY NOT NULL REFERENCES users(username) ON DELETE CASCADE,
-	two_factor_auth_enabled BOOL NOT NULL DEFAULT FALSE,
+	two_factor_auth_enabled BOOLEAN NOT NULL DEFAULT FALSE,
 );
